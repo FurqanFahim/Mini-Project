@@ -1,0 +1,36 @@
+{% extends "master_template.html" %}
+{%block title%}
+  This is View_Page
+{%endblock%}
+
+{% block body%}
+  <h2>View Records</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Father Name</th>
+        <th>CNIC</th>
+        <th>Total Fee</th>
+        <th>Submitted Fee</th>
+        <th>Remaining Fee</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      {%for stud in students%}
+      <tr>
+        <td>{{stud[4]}}</td>
+        <td>{{stud[1]}}</td>
+        <td>{{stud[2]}}</td>
+        <td>{{stud[3]}}</td>
+        <td>{{stud[7]}}</td>
+        <td>{{stud[8]}}</td>
+        <td>{{stud[9]}}</td>      
+        <td><a href="/update/{{stud[4]}}">update</a>, <a href="/delete/{{stud[4]}}">delete</a></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%endblock%}

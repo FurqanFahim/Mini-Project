@@ -1,0 +1,64 @@
+{% extends "master_template.html" %}
+    {%block title%}
+    This is the Update Page
+    {%endblock%}
+  {%block body%}
+  <h1 class="label label-success">Horizontal form</h1>
+  <form class="form-horizontal" action="{{url_for('update', roll_no = roll_no)}}" method="post" >
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="name" placeholder="Enter Name" name="name" value="{{stud[1]}}" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="fname">Father Name:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="fname" placeholder="Enter Father Name" name="fname" value="{{stud[2]}}" required>
+
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cnic">CNIC:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="number" id="cnic" placeholder="Enter CNIC Number" name="cnic" value="{{stud[3]}}" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="roll_no">Roll No:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="roll_no" placeholder="Enter Roll No" name="roll_no" value="{{stud[4]}}" required>
+
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="sub_fee">Total Fee:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="total_fee" placeholder="Enter Total Fee" name="total_fee" value="{{stud[7]}}" required>
+
+      </div>
+    </div>
+   
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="sub_fee">Submitted Fee:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="sub_fee" placeholder="Enter Submitted Fee" name="sub_fee" value="{{stud[8]}}" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Update</button>
+      </div>
+    </div>
+  </form>
+{%endblock%}

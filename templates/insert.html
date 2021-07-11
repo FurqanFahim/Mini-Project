@@ -1,0 +1,79 @@
+{% extends "master_template.html" %}
+    {%block title%}
+    This is the Insert Page
+    {%endblock%}
+{%block body%}
+  <h1 class="label label-success">Horizontal form</h1>
+  <form class="form-horizontal" action="/view" method="post" >
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="name" placeholder="Enter Name" name="name" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="fname">Father Name:</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="fname" placeholder="Enter Father Name" name="fname" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cnic">CNIC:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="number" id="cnic" placeholder="Enter CNIC Number" name="cnic" >
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="roll_no">Roll No:</label>
+      <div class="col-sm-10">
+        <input tclass="form-control" type="number" id="roll_no" placeholder="Enter Roll No" name="roll_no" required>
+
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="session">Session:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="session" name="session">
+          {% for a in sessions%}
+          <option value={{a[1]}}> {{a[1]}} </option>
+          {% endfor %}
+          
+        </select>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="total_fee">Total Fee</label>
+      <div class="col-sm-10">
+        <input tclass="form-control" type="number" id="total_fee" placeholder="Enter Total Fee" name="total_fee" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="sub_fee">Submitted Fee</label>
+      <div class="col-sm-10">
+        <input tclass="form-control" type="number" id="sub_fee" placeholder="Enter Submitted Fee" name="sub_fee" required>
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+{%endblock%}
